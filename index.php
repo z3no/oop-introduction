@@ -16,7 +16,7 @@
     <a href="extending.php">Exercise 2</a>
 
     <h2>Must haves - digging deeper</h2>
-    <a href="">Exercise 3</a>
+    <a href="private.php">Exercise 3</a>
 
 </body>
 </html>
