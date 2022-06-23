@@ -38,11 +38,29 @@ class Beverage {
         $this->temperature = $temperature;
     }
 
-    // FUNCTION TO PRINT THE BEVERAGE INFO
+    // FUNCTION TO GET THE BEVERAGE INFO
     public function getBeverageInfo() : string {
         // BETTER TO RETURN A FUNCTION THAT IS INSIDE A CLASS
         return "This beverage is $this->temperature and $this->color.";
     }
+
+    /**
+     * @return string
+     */
+    public function getColor(): string
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string $color
+     */
+    public function setColor(string $color): void
+    {
+        $this->color = $color;
+    }
+
+
 
 }
 
@@ -65,19 +83,51 @@ class Beer extends Beverage {
     /**
      * @return float
      */
-    private function getAlcoholPercentage(): float
+    public function getAlcoholPercentage(): float
     {
         return $this->alcoholPercentage;
     }
 
+    /**
+     * @param float $alcoholPercentage
+     */
+    public function setAlcoholPercentage(float $alcoholPercentage): void
+    {
+        $this->alcoholPercentage = $alcoholPercentage;
+    }
+
+    // TODO: Create a new private method in the Beer class called beerInfo which returns "Hi i'm Duvel and have an alcochol percentage of 8.5 and I have a light color." Make sure that you use the variables and not just this text line.
+
+    private function beerInfo(): string
+    {
+        return "Hi I'm " . $this->name . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
+    }
+
+    public function printBeerInfo(): string
+    {
+        return $this->beerInfo();
+    }
 }
 
+//TODO: Make all the other prints work without error.
 $duvel = new Beer("blond", 3.5, "Duvel", 8.5);
 
 echo $duvel->getAlcoholPercentage();
 echo "<br/>";
-echo $duvel->alcoholPercentage;
+$duvel->setAlcoholPercentage(8.5);
+echo $duvel->getAlcoholPercentage();
 echo "<br/>";
-echo $duvel->color;
+echo $duvel->getColor();
 echo "<br/>";
 echo $duvel->getBeverageInfo();
+echo "<br/><br/>";
+
+//TODO: After fixing the errors. Change the color of Duvel to light instead of blond and also print this new color on the screen after all the other things that were already printed (to be sure that the color has changed).
+$duvel->setColor('light');
+echo $duvel->getColor();
+echo "<br/>";
+echo $duvel->getBeverageInfo();
+echo "<br/><br/>";
+
+// TODO: Print this method on the screen on a new line.
+echo $duvel->printBeerInfo();
