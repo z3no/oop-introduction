@@ -21,25 +21,29 @@ class Beverage {
     public float $price;
     public string $temperature;
 
-    // CONSTRUCTOR
+    // CONSTRUCTOR WITH PARAMETERS BETWEEN BRACKETS
     /**
      * @param string $color
      * @param float $price
+     * @param string $temperature
      */
-    public function __construct(string $color, float $price)
+    public function __construct(string $color, float $price, string $temperature="cold")
     {
+        // "set this class's properties with the same value as the incoming parameters"
         $this->color = $color;
         $this->price = $price;
-        $this->temperature = "cold";
+        $this->temperature = $temperature;
     }
 
-
-    public function printBeverageInfo() : void {
-        echo "This beverage is $this->temperature and $this->color.";
+    // FUNCTION TO PRINT THE BEVERAGE INFO
+    public function printBeverageInfo() : string {
+        return "This beverage is $this->temperature and $this->color.";
     }
 
 }
 
+// INSTANTIATE A NEW BEVERAGE(OBJECT)
 $beverage1 = new Beverage("black", 2);
 
-$beverage1->printBeverageInfo();
+// PRINT THE INFO OF BEVERAGE 1
+echo $beverage1->printBeverageInfo();
