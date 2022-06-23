@@ -141,9 +141,9 @@ $duvel = new Beer("blond", 3.5, "Duvel", 8.5, "warm");
 
 // TODO: Print the getAlcoholPercentage 2 times on the screen in two different ways, print the color on the screen and the getInfo.
 echo $duvel->getAlcoholPercentage();
-echo "</br>";
+echo "<br/>";
 echo $duvel->alcoholPercentage;
-echo "</br>";
+echo "<br/>";
 echo $duvel->color;
-echo "</br>";
+echo "<br/>";
 echo $duvel->printBeverageInfo();
