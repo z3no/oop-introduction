@@ -37,7 +37,7 @@ class Beverage {
 
     // FUNCTION TO PRINT THE BEVERAGE INFO
     public function printBeverageInfo() : string {
-        // BETTER TO RETURN INSIDE A FUNCTION
+        // BETTER TO RETURN A FUNCTION THAT IS INSIDE A CLASS
         return "This beverage is $this->temperature and $this->color.";
     }
 
@@ -46,5 +46,5 @@ class Beverage {
 // INSTANTIATE A NEW BEVERAGE(OBJECT)
 $beverage1 = new Beverage("black", 2);
 
-// PRINT THE INFO OF BEVERAGE 1, BETTER TO ECHO OUTSIDE OF YOUR FUNCTION
+// PRINT THE INFO OF BEVERAGE 1, BETTER TO ECHO OUTSIDE OF YOUR CLASS
 echo $beverage1->printBeverageInfo();
