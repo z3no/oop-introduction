@@ -36,10 +36,26 @@ class Beverage {
         $this->temperature = $temperature;
     }
 
-    // FUNCTION TO PRINT THE BEVERAGE INFO
-    public function printBeverageInfo() : string {
+    // FUNCTION TO get THE BEVERAGE INFO
+    public function getBeverageInfo() : string {
         // BETTER TO RETURN A FUNCTION THAT IS INSIDE A CLASS
         return "This beverage is $this->temperature and $this->color.";
+    }
+
+    /**
+     * @return string
+     */
+    public function getColor(): string
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string $color
+     */
+    public function setColor(string $color): void
+    {
+        $this->color = $color;
     }
 
 }
@@ -48,4 +64,4 @@ class Beverage {
 $beverage1 = new Beverage("black", 2);
 
 // PRINT THE INFO OF BEVERAGE 1, BETTER TO ECHO OUTSIDE OF YOUR CLASS
-echo $beverage1->printBeverageInfo();
+echo $beverage1->getBeverageInfo();
