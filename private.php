@@ -116,7 +116,7 @@ class Beer extends Beverage {
 
     private function beerInfo(): string
     {
-        return "Hi I'm " . $this->getName() . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
+        return "Hi I'm " . $this->name . " and have an alcohol percentage of " . $this->alcoholPercentage . " and I have a " . $this->getColor() . " color.";
     }
 
     public function printBeerInfo(): string
