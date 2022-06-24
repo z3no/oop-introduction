@@ -33,7 +33,7 @@ class Beverage {
         return "This beverage is $this->temperature and $this->color, the price is $this->price euro.";
     }
 
-    function printPrice(float $newPrice) {
+    function printPrice(float $newPrice) : string {
         if ($newPrice < 0) {
             return "Wow where did you find a bartender that pays you to drink, LOL!";
         }
