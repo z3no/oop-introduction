@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /* EXERCISE 4
-Copy the code of exercise 2 to here and delete everything related to cola.
+Copy the code of exercise 3 to here and delete everything related to cola.
 TODO: Make all properties protected.
 TODO: Make all the other prints work without error without changing the beverage class.
 USE TYPEHINTING EVERYWHERE!
@@ -11,10 +11,12 @@ USE TYPEHINTING EVERYWHERE!
 
 class Beverage {
 
+    // BEVERAGE PROPERTIES
     protected string $color;
     protected float $price;
     protected string $temperature;
 
+    // CONSTRUCTOR WITH PARAMETERS BETWEEN BRACKETS
     /**
      * @param string $color
      * @param float $price
@@ -29,7 +31,9 @@ class Beverage {
         $this->temperature = $temperature;
     }
 
+    // FUNCTION TO GET THE BEVERAGE INFO
     public function getBeverageInfo() : string {
+        // BETTER TO RETURN A FUNCTION THAT IS INSIDE A CLASS
         return "This beverage is $this->temperature and $this->color.";
     }
 
@@ -83,18 +87,34 @@ class Beer extends Beverage {
         $this->alcoholPercentage = $alcoholPercentage;
     }
 
+    protected function beerInfo(): string
+    {
+        return "Hi I'm " . $this->name . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
+    }
+
+    public function printBeerInfo(): string
+    {
+        return $this->beerInfo();
+    }
 }
 
+//TODO: Make all the other prints work without error.
 $duvel = new Beer("blond", 3.5, "Duvel", 8.5);
 
 echo $duvel->getAlcoholPercentage();
 echo "<br/>";
-
 $duvel->setAlcoholPercentage(8.5);
 echo $duvel->getAlcoholPercentage();
 echo "<br/>";
-
 echo $duvel->getColor();
 echo "<br/>";
-
 echo $duvel->getBeverageInfo();
+echo "<br/><br/>";
+
+$duvel->setColor('light');
+echo $duvel->getColor();
+echo "<br/>";
+echo $duvel->getBeverageInfo();
+echo "<br/><br/>";
+
+echo $duvel->printBeerInfo();
