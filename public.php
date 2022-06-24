@@ -14,6 +14,7 @@ class Beverage {
     private string $color;
     private float $price;
     private string $temperature;
+    private float $newPrice;
 
     /**
      * @param string $color
@@ -29,13 +30,21 @@ class Beverage {
     }
 
     public function getBeverageInfo() : string {
-        return "This beverage is $this->temperature and $this->color.";
+        return "This beverage is $this->temperature and $this->color, the price is $this->price euro.";
+    }
+
+    function printPrice(float $newPrice) {
+        if ($newPrice < 0) {
+            return "Wow where did you find a bartender that pays you to drink, LOL!";
+        }
+        $this->price = $newPrice;
+        return "This $this->temperature beverage with a $this->color color will cost $this->price euro.";
     }
 
 }
 
-// INSTANTIATE A NEW BEVERAGE(OBJECT)
 $beverage1 = new Beverage("black", 2);
 
-// PRINT THE INFO OF BEVERAGE 1, BETTER TO ECHO OUTSIDE OF YOUR CLASS
-echo $beverage1->getBeverageInfo();
+echo $beverage1->getBeverageInfo()."<br/>";
+
+echo $beverage1->printPrice(3.5)."<br/>";
