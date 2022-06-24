@@ -53,6 +53,8 @@ class Beverage {
         $this->color = $color;
     }
 
+
+
 }
 
 class Beer extends Beverage {
@@ -72,6 +74,22 @@ class Beer extends Beverage {
     }
 
     /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @return float
      */
     public function getAlcoholPercentage(): float
@@ -87,9 +105,10 @@ class Beer extends Beverage {
         $this->alcoholPercentage = $alcoholPercentage;
     }
 
+
     protected function beerInfo(): string
     {
-        return "Hi I'm " . $this->name . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
+        return "Hi I'm " . $this->name . " and have an alcohol percentage of " . $this->alcoholPercentage . " and I have a " . $this->color . " color.";
     }
 
     public function printBeerInfo(): string
@@ -98,7 +117,6 @@ class Beer extends Beverage {
     }
 }
 
-//TODO: Make all the other prints work without error.
 $duvel = new Beer("blond", 3.5, "Duvel", 8.5);
 
 echo $duvel->getAlcoholPercentage();
