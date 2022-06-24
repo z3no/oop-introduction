@@ -81,6 +81,22 @@ class Beer extends Beverage {
     }
 
     /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @return float
      */
     public function getAlcoholPercentage(): float
@@ -100,7 +116,7 @@ class Beer extends Beverage {
 
     private function beerInfo(): string
     {
-        return "Hi I'm " . $this->name . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
+        return "Hi I'm " . $this->getName() . " and have an alcohol percentage of " . $this->getAlcoholPercentage() . " and I have a " . $this->getColor() . " color.";
     }
 
     public function printBeerInfo(): string
