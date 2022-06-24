@@ -94,6 +94,7 @@ class Beverage {
   - Cool so they are actually functions but inside a class and they give our objects certain behaviours. This word kind of scared me but actually we already know functions, it's just another name because we define it in a class.
 - [x] Make a getInfo function which returns "This beverage is <temperature> and <color>."
   - You see that after the function name I put `: string` this is a return type, so here I want it to return a string.
+  -   
 ```
 class Beverage { 
     // BEVERAGE PROPERTIES
@@ -110,4 +111,19 @@ class Beverage {
 }
 ```
 - [x] Instantiate an object which represents cola. Make sure that the color is set to black, the price equals 2 euro and the temperature to cold automatically print the getInfo on the screen.
-  - 
+    - "Instantiate" sounds fancy to me. It means we are going to create a new object of our class Beverage. For our example our object will be "cola", another object can be "fanta" or a "corona" these are all beverages. We create an object outside of our class.
+```
+class Beverage { 
+    //OUR CLASS WITH PROPERTIES, CONSTRUCTOR AND OUR GETINFO FUNCTION
+    ...
+    }
+}
+// HERE WE CAN INSTANTIATE OUR OBJECT
+$cola = new Beverage("black", 2); // THE FIRST PARAMETER IS COLOR IT IS A STRING SO WE PUT IT BETWEEN "", SECOND IS OUR PRICE WHICH IS A FLOAT SO WE CAN JUST PUT IN 2, IT IS ALSO POSSIBLE TO PUT IN 2.5, WE ALREADY SET THE TEMPERATURE SO WE DON'T NEED TO FILL THIS IN.
+
+// NEXT UP WE ECHO OUR FUNCTION IT WILL PRINT OUR RETURN VALUE OF THE FUNCTION
+echo $cola->getBeverageInfo();
+```
+- So what is happening here?:
+  - So we are creating an object and name it `cola` this is a new beverage we've created. As you can see we can assign it properties. It has a color black and a price of 2.
+  - Then we echo out the object's `getBeverageInfo()` function, and this will return us "This beverage is cold and black."
