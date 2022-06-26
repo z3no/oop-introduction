@@ -36,9 +36,12 @@ class Beverage {
     function printPrice(float $newPrice) : string {
         if ($newPrice < 0) {
             return "Wow where did you find a bartender that pays you to drink, LOL!";
+        } elseif ($newPrice == 0) {
+            return "This one you get for free from the bartender.";
+        } else {
+            $this->price = $newPrice;
+            return "This $this->temperature beverage with a $this->color color will cost $this->price euro.";
         }
-        $this->price = $newPrice;
-        return "This $this->temperature beverage with a $this->color color will cost $this->price euro.";
     }
 
 }
@@ -50,3 +53,4 @@ $beverage1->beverageInfo();
 echo "<br/>";
 
 echo $beverage1->printPrice(3.5)."<br/>";
+echo $beverage1->printPrice(0)."<br/>";
