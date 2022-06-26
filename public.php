@@ -29,8 +29,8 @@ class Beverage {
         $this->temperature = "cold";
     }
 
-    public function getBeverageInfo() : string {
-        return "This beverage is $this->temperature and $this->color, the price is $this->price euro.";
+    public function beverageInfo() : void {
+        echo "This beverage is $this->temperature and $this->color, the price is $this->price euro.";
     }
 
     function printPrice(float $newPrice) : string {
@@ -45,6 +45,8 @@ class Beverage {
 
 $beverage1 = new Beverage("black", 2);
 
-echo $beverage1->getBeverageInfo()."<br/>";
+$beverage1->beverageInfo();
+
+echo "<br/>";
 
 echo $beverage1->printPrice(3.5)."<br/>";
